@@ -24,7 +24,7 @@ This console app can easily be configured by providing the following information
 - BLOB_STORAGE_CONNECTION_STRING
 - BLOB_CONTAINER_NAME
 
-When executing the console app, you will need to provide a New Relic License Key (part of the [https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/new-relic-license-key](account set-up); New Relic provides a perpetually [free New Relic account](https://newrelic.com/signup)). 
+When executing the console app, you will need to provide a New Relic License Key (part of the [account set-up](https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/new-relic-license-key); New Relic provides a perpetually [free New Relic account](https://newrelic.com/signup)). 
 
 You can then execte this app by using this syntax:
 

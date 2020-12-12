@@ -26,6 +26,12 @@ This console app can easily be configured by providing the following information
 
 When executing the console app, you will need to provide a New Relic License Key (part of the [https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/new-relic-license-key](account set-up); New Relic provides a perpetually [free New Relic account](https://newrelic.com/signup)). 
 
+You can then execte this app by using this syntax:
+
+```bash
+dotnet <PATH-TO-FILE>/ms_azure_monitor_event_hubs_receiver.dll <NEWRELIC_LICENSE_KEY>
+```
+
 You can either run this console up in a continuous fashion or scheduler. However, another great way to continuously gather metrics and logs from Azure Event Hub is through integration this console app as a [New Relic Flex](https://github.com/newrelic/nri-flex) integration. A sample config is already available [here](https://github.com/harrykimpel/nri-flex/blob/master/examples/microsoft-azure-monitor-logs.yml).
 
 Once the data has been retrieved, you can then analyze the data using New Relic Telemetry Data PLatform or build custom dashboards. An example quere for Azure Function Logs is provided here:

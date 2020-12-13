@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>ms_azure_monitor_event_hubs_receiver</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Collections" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="System.Net.Http;" />
+    <PackageReference Include="Azure.Messaging.EventHubs" Version="5.2.0" />
+    <PackageReference Include="Azure.Messaging.EventHubs.Processor" Version="5.2.0" />
+
+  </ItemGroup>
+
+</Project>

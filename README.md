@@ -16,6 +16,20 @@ From Microsoft Azure Event Hub, you can gather metrics and logs from the Event H
 
 ## Microsoft Azure Monitor Event Hubs Receiver for New Relic Logs
 
+Both options below require a New Relic account and its corresponding license key to be provided. New Relic License Key (part of the [account set-up](https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/new-relic-license-key); New Relic provides a perpetually [free New Relic account](https://newrelic.com/signup)).
+
+### Azure Function
+
+The azure-function folder contains an example to retrieve Azure Monitor Event Hub events through an Azure Function and forward these events to New Relic Logs.
+
+This Azure Function requires an environment variable to be set:
+
+```
+NEWRELIC_LICENSE_KEY
+```
+
+### Console App
+
 This repository provides an easy way to retrieve events from Azure Event Hub and forward into New Relic's Telemetry Data Platform. The current release focuses on Log data since most of the other Metrics are already captured through [New Relic Azure integrations](https://docs.newrelic.com/docs/integrations/microsoft-azure-integrations/getting-started/introduction-azure-monitoring-integrations).
 
 This console app can easily be configured by providing the following information (a future release will try to gather these from parameters):
@@ -24,7 +38,7 @@ This console app can easily be configured by providing the following information
 - BLOB_STORAGE_CONNECTION_STRING
 - BLOB_CONTAINER_NAME
 
-When executing the console app, you will need to provide a New Relic License Key (part of the [account set-up](https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/new-relic-license-key); New Relic provides a perpetually [free New Relic account](https://newrelic.com/signup)). 
+When executing the console app, you will need to provide a New Relic License Key to pass in as an parameter to the console app. 
 
 You can then execte this app by using this syntax:
 

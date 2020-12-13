@@ -48,6 +48,8 @@ dotnet <PATH-TO-FILE>/ms_azure_monitor_event_hubs_receiver.dll <NEWRELIC_LICENSE
 
 You can either run this console up in a continuous fashion or scheduler. However, another great way to continuously gather metrics and logs from Azure Event Hub is through integration this console app as a [New Relic Flex](https://github.com/newrelic/nri-flex) integration. A sample config is already available [here](https://github.com/harrykimpel/nri-flex/blob/master/examples/microsoft-azure-monitor-logs.yml).
 
+## Analyze and observe data in New Relic platform
+
 Once the data has been retrieved, you can then analyze the data using New Relic Telemetry Data PLatform or build custom dashboards. An example quere for Azure Function Logs is provided here:
 
 ```SQL

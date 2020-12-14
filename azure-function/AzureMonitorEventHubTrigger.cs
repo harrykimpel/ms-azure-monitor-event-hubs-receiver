@@ -28,7 +28,6 @@ namespace NewRelic.Function
                     string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
 
                     var i = 0;
-                    string res = "";
 
                     // Get the body of the event
                     var json = Encoding.UTF8.GetString(eventData.Body.Array);
@@ -61,8 +60,21 @@ namespace NewRelic.Function
 
                             // get single event
                             var jtString = jt.ToString();
+
                             // replace time attribute with UNIX timestamp attribute
                             jtString = jtString.Replace("\"time\": \"" + time + "\"", "\"timestamp\": \"" + unixTimestamp + "\"");
+
+                            // set consistent name for category and add logtype
+                            if (category != null &&
+                                category.Length > 0)
+                            {
+                                jtString = jtString.Replace("\"category\": \"" + category + "\"", "\"logtype\": \"" + category + "\", \"category\": \"" + category + "\"");
+                            }
+                            else if (categoryUpp != null &&
+                                categoryUpp.Length > 0)
+                            {
+                                jtString = jtString.Replace("\"Category\": \"" + categoryUpp + "\"", "\"logtype\": \"" + categoryUpp + "\", \"category\": \"" + categoryUpp + "\"");
+                            }
 
                             // add event to list
                             logEntries += jtString + ",";
@@ -89,7 +101,6 @@ namespace NewRelic.Function
 
                     // write output as summary
                     log.LogInformation("Successfully processed " + i.ToString() + " events. ");
-                    log.LogInformation(res);
 
                     // Replace these two lines with your processing logic.
                     log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
